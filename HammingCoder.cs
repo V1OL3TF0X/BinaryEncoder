@@ -8,6 +8,7 @@ namespace BinaryEncoder
 {
         public class HammingCoder : ICoder
         {
+        private string _message;
             private bool[] msg;
             private int numOfBytes;
             bool ExtendedHamming { get; set; }
@@ -22,30 +23,7 @@ namespace BinaryEncoder
             }
             public void newMessage(string message)
             {
-                numOfBytes = 2;
-                int encodedBytes = 1;
-                numOfBytes = 2;
-                Console.WriteLine(message);
-                while (message.Length + encodedBytes + 1 > numOfBytes)
-                {
-                    encodedBytes++;
-                    numOfBytes *= 2;
-                } //finds the nearest power of 2 sufficient to code out message
-                numOfBytes = message.Length + encodedBytes + 1;
-                msg = new bool[numOfBytes];
-                int tmp = 1;
-                int DataByte = 0;
-                for (int i = 1; i < numOfBytes; i++)
-                {
-                    if (i == tmp)
-                    {
-                        tmp *= 2;
-                    }
-                    else
-                    {
-                        if (DataByte < message.Length) msg[i] = (int)char.GetNumericValue(message[DataByte++]) == 1;
-                    }
-                } //sets the data bits in our message
+                 _message = message;
             }
             public bool DisruptMessage(int disrupt)
             {
@@ -63,6 +41,30 @@ namespace BinaryEncoder
             }
             public string EncodeMessage()
             {
+                numOfBytes = 2;
+                int encodedBytes = 1;
+                while (_message.Length + encodedBytes + 1 > numOfBytes)
+                {
+                    encodedBytes++;
+                    numOfBytes *= 2;
+                } //finds the nearest power of 2 sufficient to code out message
+                numOfBytes = _message.Length + encodedBytes + 1;
+                msg = new bool[numOfBytes];
+                int tmp = 1;
+                int DataByte = 0;
+                for (int i = 1; i < numOfBytes; i++)
+                {
+                    if (i == tmp)
+                    {
+                        tmp *= 2;
+                    }
+                    else
+                    {
+                        if (DataByte < _message.Length) msg[i] = (int)char.GetNumericValue(_message[DataByte++]) == 1;
+                    }
+                }
+
+
                 int ParityCheck = 0;
                 for (int i = 0; i < numOfBytes; i++)
                 {
@@ -83,6 +85,11 @@ namespace BinaryEncoder
             }
             public (string message, int errorNo) DecodeMessage()
             {
+                msg = new bool[_message.Length];
+                numOfBytes = _message.Length;
+
+                for (int i = 0; i < msg.Length; i++)
+                    msg[i] = _message[i] == '1';
                 string returnMsg = "";
                 int ErrPos = 0, errNo = 0;
                 bool overallParity = false;

@@ -31,10 +31,7 @@ namespace BinaryEncoder
 
         private void UpdateEncode()
         {
-            if (EncodeRadioButton.Checked) 
-                encode = true;
-            else 
-                encode = false;
+            encode = EncodeRadioButton.Checked;
         }
 
         private void UpdateCoder()
@@ -47,6 +44,7 @@ namespace BinaryEncoder
 
         private void doStuffButton_Click(object sender, EventArgs e)
         {
+            coder.newMessage(OriginalMessageTextBox.Text);
             if (encode)
             {
                 EncodedMessageTextBox.Text = coder.EncodeMessage();
