@@ -195,7 +195,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Aplikacja do korekcji pojedynczego";
+            this.Text = "Aplikacja do korekcji pojedynczego błędu za pomocą kodowania Hamminga";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
