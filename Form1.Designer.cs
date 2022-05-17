@@ -40,6 +40,7 @@
             this.EncodedMessageTextBox = new System.Windows.Forms.TextBox();
             this.doStuffButton = new System.Windows.Forms.Button();
             this.ErrorLabel = new System.Windows.Forms.Label();
+            this.AuthorLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -170,11 +171,21 @@
             this.ErrorLabel.TabIndex = 9;
             this.ErrorLabel.Text = "Errors: 0";
             // 
+            // AuthorLabel
+            // 
+            this.AuthorLabel.AutoSize = true;
+            this.AuthorLabel.Location = new System.Drawing.Point(22, 321);
+            this.AuthorLabel.Name = "AuthorLabel";
+            this.AuthorLabel.Size = new System.Drawing.Size(301, 15);
+            this.AuthorLabel.TabIndex = 10;
+            this.AuthorLabel.Text = "Autorzy: Mateusz Adamiec, Michał Boruta, Maciej Ejduk";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 318);
+            this.ClientSize = new System.Drawing.Size(500, 348);
+            this.Controls.Add(this.AuthorLabel);
             this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.doStuffButton);
             this.Controls.Add(this.EncodedMessageLabel);
@@ -184,7 +195,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Aplikacja do korekcji pojedynczego";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -210,5 +221,6 @@
         private bool encode;
         private Button doStuffButton;
         private Label ErrorLabel;
+        private Label AuthorLabel;
     }
 }
