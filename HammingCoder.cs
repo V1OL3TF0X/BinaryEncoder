@@ -18,6 +18,8 @@ namespace BinaryEncoder
             }
             public HammingCoder(string message = "", bool ExtendedHC = true)
             {
+                _message = "";
+                msg = new bool[1];
                 newMessage(message);
                 ExtendedHamming = ExtendedHC;
             }
