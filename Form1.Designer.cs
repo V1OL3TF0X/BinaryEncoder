@@ -48,9 +48,10 @@
             // 
             this.EncodeRadioButton.AutoSize = true;
             this.EncodeRadioButton.Checked = true;
-            this.EncodeRadioButton.Location = new System.Drawing.Point(6, 22);
+            this.EncodeRadioButton.Location = new System.Drawing.Point(7, 29);
+            this.EncodeRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EncodeRadioButton.Name = "EncodeRadioButton";
-            this.EncodeRadioButton.Size = new System.Drawing.Size(64, 19);
+            this.EncodeRadioButton.Size = new System.Drawing.Size(79, 24);
             this.EncodeRadioButton.TabIndex = 0;
             this.EncodeRadioButton.TabStop = true;
             this.EncodeRadioButton.Text = "Encode";
@@ -60,9 +61,10 @@
             // DecodeRadioButton
             // 
             this.DecodeRadioButton.AutoSize = true;
-            this.DecodeRadioButton.Location = new System.Drawing.Point(6, 47);
+            this.DecodeRadioButton.Location = new System.Drawing.Point(7, 63);
+            this.DecodeRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DecodeRadioButton.Name = "DecodeRadioButton";
-            this.DecodeRadioButton.Size = new System.Drawing.Size(65, 19);
+            this.DecodeRadioButton.Size = new System.Drawing.Size(82, 24);
             this.DecodeRadioButton.TabIndex = 1;
             this.DecodeRadioButton.Text = "Decode";
             this.DecodeRadioButton.UseVisualStyleBackColor = true;
@@ -73,9 +75,11 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.EncodeRadioButton);
             this.groupBox1.Controls.Add(this.DecodeRadioButton);
-            this.groupBox1.Location = new System.Drawing.Point(384, 12);
+            this.groupBox1.Location = new System.Drawing.Point(439, 16);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(104, 75);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(119, 100);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Action";
@@ -85,9 +89,11 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.HammingCoderRadioButton);
             this.groupBox2.Controls.Add(this.PolynomialCoderRadioButton);
-            this.groupBox2.Location = new System.Drawing.Point(384, 100);
+            this.groupBox2.Location = new System.Drawing.Point(439, 133);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(104, 73);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Size = new System.Drawing.Size(119, 97);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Coder";
@@ -96,9 +102,10 @@
             // 
             this.HammingCoderRadioButton.AutoSize = true;
             this.HammingCoderRadioButton.Checked = true;
-            this.HammingCoderRadioButton.Location = new System.Drawing.Point(7, 21);
+            this.HammingCoderRadioButton.Location = new System.Drawing.Point(8, 28);
+            this.HammingCoderRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HammingCoderRadioButton.Name = "HammingCoderRadioButton";
-            this.HammingCoderRadioButton.Size = new System.Drawing.Size(79, 19);
+            this.HammingCoderRadioButton.Size = new System.Drawing.Size(96, 24);
             this.HammingCoderRadioButton.TabIndex = 2;
             this.HammingCoderRadioButton.TabStop = true;
             this.HammingCoderRadioButton.Text = "Hamming";
@@ -108,9 +115,10 @@
             // PolynomialCoderRadioButton
             // 
             this.PolynomialCoderRadioButton.AutoSize = true;
-            this.PolynomialCoderRadioButton.Location = new System.Drawing.Point(7, 46);
+            this.PolynomialCoderRadioButton.Location = new System.Drawing.Point(8, 61);
+            this.PolynomialCoderRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PolynomialCoderRadioButton.Name = "PolynomialCoderRadioButton";
-            this.PolynomialCoderRadioButton.Size = new System.Drawing.Size(85, 19);
+            this.PolynomialCoderRadioButton.Size = new System.Drawing.Size(103, 24);
             this.PolynomialCoderRadioButton.TabIndex = 3;
             this.PolynomialCoderRadioButton.Text = "Polynomial";
             this.PolynomialCoderRadioButton.UseVisualStyleBackColor = true;
@@ -118,44 +126,46 @@
             // 
             // OriginalMessageTextBox
             // 
-            this.OriginalMessageTextBox.Location = new System.Drawing.Point(12, 30);
+            this.OriginalMessageTextBox.Location = new System.Drawing.Point(14, 40);
+            this.OriginalMessageTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.OriginalMessageTextBox.Multiline = true;
             this.OriginalMessageTextBox.Name = "OriginalMessageTextBox";
-            this.OriginalMessageTextBox.Size = new System.Drawing.Size(167, 261);
+            this.OriginalMessageTextBox.Size = new System.Drawing.Size(190, 347);
             this.OriginalMessageTextBox.TabIndex = 4;
-            this.OriginalMessageTextBox.TextChanged += new System.EventHandler(this.OriginalMessageTextBox_TextChanged);
             // 
             // DecodedMessageLAbel
             // 
             this.DecodedMessageLAbel.AutoSize = true;
-            this.DecodedMessageLAbel.Location = new System.Drawing.Point(12, 9);
+            this.DecodedMessageLAbel.Location = new System.Drawing.Point(14, 12);
             this.DecodedMessageLAbel.Name = "DecodedMessageLAbel";
-            this.DecodedMessageLAbel.Size = new System.Drawing.Size(98, 15);
+            this.DecodedMessageLAbel.Size = new System.Drawing.Size(124, 20);
             this.DecodedMessageLAbel.TabIndex = 5;
             this.DecodedMessageLAbel.Text = "Original message";
             // 
             // EncodedMessageLabel
             // 
             this.EncodedMessageLabel.AutoSize = true;
-            this.EncodedMessageLabel.Location = new System.Drawing.Point(185, 9);
+            this.EncodedMessageLabel.Location = new System.Drawing.Point(211, 12);
             this.EncodedMessageLabel.Name = "EncodedMessageLabel";
-            this.EncodedMessageLabel.Size = new System.Drawing.Size(109, 15);
+            this.EncodedMessageLabel.Size = new System.Drawing.Size(137, 20);
             this.EncodedMessageLabel.TabIndex = 7;
             this.EncodedMessageLabel.Text = "Processed message";
             // 
             // EncodedMessageTextBox
             // 
-            this.EncodedMessageTextBox.Location = new System.Drawing.Point(185, 30);
+            this.EncodedMessageTextBox.Location = new System.Drawing.Point(211, 40);
+            this.EncodedMessageTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EncodedMessageTextBox.Multiline = true;
             this.EncodedMessageTextBox.Name = "EncodedMessageTextBox";
-            this.EncodedMessageTextBox.Size = new System.Drawing.Size(171, 261);
+            this.EncodedMessageTextBox.Size = new System.Drawing.Size(195, 347);
             this.EncodedMessageTextBox.TabIndex = 6;
             // 
             // doStuffButton
             // 
-            this.doStuffButton.Location = new System.Drawing.Point(401, 268);
+            this.doStuffButton.Location = new System.Drawing.Point(458, 357);
+            this.doStuffButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.doStuffButton.Name = "doStuffButton";
-            this.doStuffButton.Size = new System.Drawing.Size(75, 23);
+            this.doStuffButton.Size = new System.Drawing.Size(86, 31);
             this.doStuffButton.TabIndex = 8;
             this.doStuffButton.Text = "WORK";
             this.doStuffButton.UseVisualStyleBackColor = true;
@@ -164,17 +174,17 @@
             // ErrorLabel
             // 
             this.ErrorLabel.AutoSize = true;
-            this.ErrorLabel.Location = new System.Drawing.Point(14, 294);
+            this.ErrorLabel.Location = new System.Drawing.Point(16, 392);
             this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(49, 15);
+            this.ErrorLabel.Size = new System.Drawing.Size(62, 20);
             this.ErrorLabel.TabIndex = 9;
             this.ErrorLabel.Text = "Errors: 0";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 318);
+            this.ClientSize = new System.Drawing.Size(571, 424);
             this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.doStuffButton);
             this.Controls.Add(this.EncodedMessageLabel);
@@ -183,6 +193,7 @@
             this.Controls.Add(this.OriginalMessageTextBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);

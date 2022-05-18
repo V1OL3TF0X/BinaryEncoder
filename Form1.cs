@@ -47,6 +47,7 @@ namespace BinaryEncoder
 
         private void doStuffButton_Click(object sender, EventArgs e)
         {
+            coder.newMessage(OriginalMessageTextBox.Text);
             if (encode)
             {
                 EncodedMessageTextBox.Text = coder.EncodeMessage();
@@ -70,11 +71,6 @@ namespace BinaryEncoder
 
             }
            
-        }
-
-        private void OriginalMessageTextBox_TextChanged(object sender, EventArgs e)
-        {
-            coder.newMessage(OriginalMessageTextBox.Text);
         }
     }
 }
