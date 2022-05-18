@@ -31,10 +31,7 @@ namespace BinaryEncoder
 
         private void UpdateEncode()
         {
-            if (EncodeRadioButton.Checked) 
-                encode = true;
-            else 
-                encode = false;
+            encode = EncodeRadioButton.Checked;
         }
 
         private void UpdateCoder()
