@@ -8,10 +8,9 @@ namespace BinaryEncoder
 {
         public class HammingCoder : ICoder
         {
-        private string _message;
+            private string _message;
             private bool[] msg;
             private int numOfBytes;
-            private string message;
             bool ExtendedHamming { get; set; }
             public static implicit operator HammingCoder(string v)
             {
@@ -90,16 +89,15 @@ namespace BinaryEncoder
 
                 for (int i = 0; i < msg.Length; i++)
                     msg[i] = _message[i] == '1';
-                string returnMsg = "";
                 int ErrPos = 0, errNo = 0;
                 bool overallParity = false;
                 for (int i = 0; i < numOfBytes; i++)
                 {
                     if(IsPowerOf2(i)) msg[i]=false;
-                    else msg[i] = (message[i]=='1');
+                    else msg[i] = (_message[i]=='1');
                 }
                 int ParityCheck = 0;
-                for (int i = 0; i < message.Length; i++)
+                for (int i = 0; i < _message.Length; i++)
                 {
                     if (msg[i]) //bits set to 0 won't changee the parity therefore don't need to be checked
                     {
@@ -107,16 +105,16 @@ namespace BinaryEncoder
                         msg[0] ^= msg[i]; //0th bit is the parity bit for the whole message
                     }
                 } //for a more thorough explanation of the algorithm see 3Blue1Brown's video: https://www.youtube.com/watch?v=b3NxrZOu_CE
-                for (int i = 1; i < message.Length; i *= 2)
+                for (int i = 1; i < _message.Length; i *= 2)
                 {
                     msg[i] = ParityCheck % 2 == 1;
                     msg[0] ^= msg[i]; //0th bit is the parity bit for the whole message
                     ParityCheck /= 2;
                 }//setting parity bits
                 string mess = ToString();
-                for(int i = 1; i < message.Length; i*=2)
+                for(int i = 1; i < _message.Length; i*=2)
                 {
-                    if(mess[i]!=message[i])
+                    if(mess[i]!=_message[i])
                     {
                         ErrPos+=i;
                         overallParity = !overallParity;
@@ -147,25 +145,6 @@ namespace BinaryEncoder
             {
                 string s = string.Join("", msg.Select(x => Convert.ToInt32(x)));
                 return ExtendedHamming ? s : s[1..];
-            }
-        
-            private void GenerateMSG(int encodedBytes = 0)
-            {
-                numOfBytes = this.message.Length + encodedBytes;
-                msg = new bool[numOfBytes];
-                int tmp = 1;
-                int DataByte = 0;
-                for (int i = 1; i < numOfBytes; i++)
-                {
-                    if (i == tmp)
-                    {
-                        tmp *= 2;
-                    }
-                    else
-                    {
-                        if (DataByte < message.Length) msg[i] = ((int)char.GetNumericValue(message[DataByte++]) == 1);
-                    }
-                } //sets the data bits in our message
             }
         }
 
