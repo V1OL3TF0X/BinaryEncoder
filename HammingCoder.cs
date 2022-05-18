@@ -84,7 +84,7 @@ namespace BinaryEncoder
                 }//setting parity bits
                 return ToString();
             }
-            public (string message, int errorNo) DecodeMessage()
+            public (string message, int errorNo, string errorPos) DecodeMessage()
             {
                 msg = new bool[_message.Length];
                 numOfBytes = _message.Length;
@@ -125,7 +125,7 @@ namespace BinaryEncoder
                 if (ErrPos != 0) //we encountered an error
                 {
                     if (!overallParity) //overall parity is even - at least two errors
-                        return ("", 2);
+                        return ("", 2, "");
                     msg[ErrPos] ^= true; //ErrPos points at the bit that d=needs to be flipped
                     errNo++;
 
@@ -136,7 +136,7 @@ namespace BinaryEncoder
                 {
                     if(!IsPowerOf2(i)) r+=s[i];
                 }
-                return (r, errNo);
+                return (r, errNo, Convert.ToString(ErrPos));
             }
             private static bool IsPowerOf2(int x)
             {
@@ -148,6 +148,21 @@ namespace BinaryEncoder
                 string s = string.Join("", msg.Select(x => Convert.ToInt32(x)));
                 return ExtendedHamming ? s : s[1..];
             }
-        }
+
+            int highestPowerof2(int n)
+            {
+                int res = 0;
+                for (int i = n; i >= 1; i--)
+                {
+                    // If i is a power of 2
+                    if ((i & (i - 1)) == 0)
+                    {
+                        res = i;
+                        break;
+                    }
+                }
+                return res;
+            }
+    }
 
 }

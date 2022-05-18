@@ -8,7 +8,7 @@ namespace BinaryEncoder
 {
     internal class PolynomialCoder : ICoder
     {
-        public (string message, int errorNo) DecodeMessage()
+        public (string message, int errorNo, string errorPos) DecodeMessage()
         {
             throw new NotImplementedException();
         }

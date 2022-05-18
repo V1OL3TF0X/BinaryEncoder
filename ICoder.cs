@@ -11,6 +11,6 @@ namespace BinaryEncoder
         public bool DisruptMessage(int disrupt);
         public void newMessage(string message);
         public string EncodeMessage();
-        public (string message, int errorNo) DecodeMessage();
+        public (string message, int errorNo, string errorPos) DecodeMessage();
     }
 }

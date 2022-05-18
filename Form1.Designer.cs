@@ -28,158 +28,158 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.EncodeRadioButton = new System.Windows.Forms.RadioButton();
-            this.DecodeRadioButton = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.HammingCoderRadioButton = new System.Windows.Forms.RadioButton();
-            this.PolynomialCoderRadioButton = new System.Windows.Forms.RadioButton();
-            this.OriginalMessageTextBox = new System.Windows.Forms.TextBox();
-            this.DecodedMessageLAbel = new System.Windows.Forms.Label();
-            this.EncodedMessageLabel = new System.Windows.Forms.Label();
-            this.EncodedMessageTextBox = new System.Windows.Forms.TextBox();
+            this.encodeRadioButton = new System.Windows.Forms.RadioButton();
+            this.decodeRadioButton = new System.Windows.Forms.RadioButton();
+            this.actionGroupBox = new System.Windows.Forms.GroupBox();
+            this.coderGroupBox = new System.Windows.Forms.GroupBox();
+            this.hammingCoderRadioButton = new System.Windows.Forms.RadioButton();
+            this.polynomialCoderRadioButton = new System.Windows.Forms.RadioButton();
+            this.originalMessageTextBox = new System.Windows.Forms.TextBox();
+            this.originalMessageLabel = new System.Windows.Forms.Label();
+            this.processedMessageLabel = new System.Windows.Forms.Label();
+            this.processedMessageTextBox = new System.Windows.Forms.TextBox();
             this.doStuffButton = new System.Windows.Forms.Button();
-            this.ErrorLabel = new System.Windows.Forms.Label();
-            this.AuthorLabel = new System.Windows.Forms.Label();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.errorLabel = new System.Windows.Forms.Label();
+            this.authorLabel = new System.Windows.Forms.Label();
+            this.panelAuthorsSplitter = new System.Windows.Forms.SplitContainer();
+            this.messagesActionsSplitter = new System.Windows.Forms.SplitContainer();
+            this.messagesErrorTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.messagesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.actionsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.actionGroupBox.SuspendLayout();
+            this.coderGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelAuthorsSplitter)).BeginInit();
+            this.panelAuthorsSplitter.Panel1.SuspendLayout();
+            this.panelAuthorsSplitter.Panel2.SuspendLayout();
+            this.panelAuthorsSplitter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.messagesActionsSplitter)).BeginInit();
+            this.messagesActionsSplitter.Panel1.SuspendLayout();
+            this.messagesActionsSplitter.Panel2.SuspendLayout();
+            this.messagesActionsSplitter.SuspendLayout();
+            this.messagesErrorTableLayoutPanel.SuspendLayout();
+            this.messagesTableLayoutPanel.SuspendLayout();
+            this.actionsTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // EncodeRadioButton
+            // encodeRadioButton
             // 
-            this.EncodeRadioButton.AutoSize = true;
-            this.EncodeRadioButton.Checked = true;
-            this.EncodeRadioButton.Location = new System.Drawing.Point(7, 29);
-            this.EncodeRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.EncodeRadioButton.Name = "EncodeRadioButton";
-            this.EncodeRadioButton.Size = new System.Drawing.Size(79, 24);
-            this.EncodeRadioButton.TabIndex = 0;
-            this.EncodeRadioButton.TabStop = true;
-            this.EncodeRadioButton.Text = "Encode";
-            this.EncodeRadioButton.UseVisualStyleBackColor = true;
-            this.EncodeRadioButton.CheckedChanged += new System.EventHandler(this.EncodeRadioButton_CheckedChanged);
+            this.encodeRadioButton.AutoSize = true;
+            this.encodeRadioButton.Checked = true;
+            this.encodeRadioButton.Location = new System.Drawing.Point(7, 29);
+            this.encodeRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.encodeRadioButton.Name = "encodeRadioButton";
+            this.encodeRadioButton.Size = new System.Drawing.Size(79, 24);
+            this.encodeRadioButton.TabIndex = 0;
+            this.encodeRadioButton.TabStop = true;
+            this.encodeRadioButton.Text = "Encode";
+            this.encodeRadioButton.UseVisualStyleBackColor = true;
+            this.encodeRadioButton.CheckedChanged += new System.EventHandler(this.EncodeRadioButton_CheckedChanged);
             // 
-            // DecodeRadioButton
+            // decodeRadioButton
             // 
-            this.DecodeRadioButton.AutoSize = true;
-            this.DecodeRadioButton.Location = new System.Drawing.Point(7, 63);
-            this.DecodeRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.DecodeRadioButton.Name = "DecodeRadioButton";
-            this.DecodeRadioButton.Size = new System.Drawing.Size(82, 24);
-            this.DecodeRadioButton.TabIndex = 1;
-            this.DecodeRadioButton.Text = "Decode";
-            this.DecodeRadioButton.UseVisualStyleBackColor = true;
-            this.DecodeRadioButton.CheckedChanged += new System.EventHandler(this.DecodeRadioButton_CheckedChanged);
+            this.decodeRadioButton.AutoSize = true;
+            this.decodeRadioButton.Location = new System.Drawing.Point(7, 63);
+            this.decodeRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.decodeRadioButton.Name = "decodeRadioButton";
+            this.decodeRadioButton.Size = new System.Drawing.Size(82, 24);
+            this.decodeRadioButton.TabIndex = 1;
+            this.decodeRadioButton.Text = "Decode";
+            this.decodeRadioButton.UseVisualStyleBackColor = true;
+            this.decodeRadioButton.CheckedChanged += new System.EventHandler(this.DecodeRadioButton_CheckedChanged);
             // 
-            // groupBox1
+            // actionGroupBox
             // 
-            this.groupBox1.Controls.Add(this.EncodeRadioButton);
-            this.groupBox1.Controls.Add(this.DecodeRadioButton);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(168, 268);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Action";
+            this.actionGroupBox.Controls.Add(this.encodeRadioButton);
+            this.actionGroupBox.Controls.Add(this.decodeRadioButton);
+            this.actionGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.actionGroupBox.Location = new System.Drawing.Point(3, 4);
+            this.actionGroupBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.actionGroupBox.Name = "actionGroupBox";
+            this.actionGroupBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.actionGroupBox.Size = new System.Drawing.Size(168, 268);
+            this.actionGroupBox.TabIndex = 2;
+            this.actionGroupBox.TabStop = false;
+            this.actionGroupBox.Text = "Action";
             // 
-            // groupBox2
+            // coderGroupBox
             // 
-            this.groupBox2.Controls.Add(this.HammingCoderRadioButton);
-            this.groupBox2.Controls.Add(this.PolynomialCoderRadioButton);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 280);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(168, 457);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Coder";
+            this.coderGroupBox.Controls.Add(this.hammingCoderRadioButton);
+            this.coderGroupBox.Controls.Add(this.polynomialCoderRadioButton);
+            this.coderGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.coderGroupBox.Location = new System.Drawing.Point(3, 280);
+            this.coderGroupBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.coderGroupBox.Name = "coderGroupBox";
+            this.coderGroupBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.coderGroupBox.Size = new System.Drawing.Size(168, 457);
+            this.coderGroupBox.TabIndex = 3;
+            this.coderGroupBox.TabStop = false;
+            this.coderGroupBox.Text = "Coder";
             // 
-            // HammingCoderRadioButton
+            // hammingCoderRadioButton
             // 
-            this.HammingCoderRadioButton.AutoSize = true;
-            this.HammingCoderRadioButton.Checked = true;
-            this.HammingCoderRadioButton.Location = new System.Drawing.Point(8, 28);
-            this.HammingCoderRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.HammingCoderRadioButton.Name = "HammingCoderRadioButton";
-            this.HammingCoderRadioButton.Size = new System.Drawing.Size(96, 24);
-            this.HammingCoderRadioButton.TabIndex = 2;
-            this.HammingCoderRadioButton.TabStop = true;
-            this.HammingCoderRadioButton.Text = "Hamming";
-            this.HammingCoderRadioButton.UseVisualStyleBackColor = true;
-            this.HammingCoderRadioButton.CheckedChanged += new System.EventHandler(this.HammingCoderRadioButton_CheckedChanged);
+            this.hammingCoderRadioButton.AutoSize = true;
+            this.hammingCoderRadioButton.Checked = true;
+            this.hammingCoderRadioButton.Location = new System.Drawing.Point(8, 28);
+            this.hammingCoderRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hammingCoderRadioButton.Name = "hammingCoderRadioButton";
+            this.hammingCoderRadioButton.Size = new System.Drawing.Size(96, 24);
+            this.hammingCoderRadioButton.TabIndex = 2;
+            this.hammingCoderRadioButton.TabStop = true;
+            this.hammingCoderRadioButton.Text = "Hamming";
+            this.hammingCoderRadioButton.UseVisualStyleBackColor = true;
+            this.hammingCoderRadioButton.CheckedChanged += new System.EventHandler(this.HammingCoderRadioButton_CheckedChanged);
             // 
-            // PolynomialCoderRadioButton
+            // polynomialCoderRadioButton
             // 
-            this.PolynomialCoderRadioButton.AutoSize = true;
-            this.PolynomialCoderRadioButton.Location = new System.Drawing.Point(8, 61);
-            this.PolynomialCoderRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PolynomialCoderRadioButton.Name = "PolynomialCoderRadioButton";
-            this.PolynomialCoderRadioButton.Size = new System.Drawing.Size(103, 24);
-            this.PolynomialCoderRadioButton.TabIndex = 3;
-            this.PolynomialCoderRadioButton.Text = "Polynomial";
-            this.PolynomialCoderRadioButton.UseVisualStyleBackColor = true;
-            this.PolynomialCoderRadioButton.CheckedChanged += new System.EventHandler(this.PolynomialCoderRadioButton_CheckedChanged);
+            this.polynomialCoderRadioButton.AutoSize = true;
+            this.polynomialCoderRadioButton.Location = new System.Drawing.Point(8, 61);
+            this.polynomialCoderRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.polynomialCoderRadioButton.Name = "polynomialCoderRadioButton";
+            this.polynomialCoderRadioButton.Size = new System.Drawing.Size(103, 24);
+            this.polynomialCoderRadioButton.TabIndex = 3;
+            this.polynomialCoderRadioButton.Text = "Polynomial";
+            this.polynomialCoderRadioButton.UseVisualStyleBackColor = true;
+            this.polynomialCoderRadioButton.CheckedChanged += new System.EventHandler(this.PolynomialCoderRadioButton_CheckedChanged);
             // 
-            // OriginalMessageTextBox
+            // originalMessageTextBox
             // 
-            this.OriginalMessageTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OriginalMessageTextBox.Location = new System.Drawing.Point(3, 34);
-            this.OriginalMessageTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.OriginalMessageTextBox.Multiline = true;
-            this.OriginalMessageTextBox.Name = "OriginalMessageTextBox";
-            this.OriginalMessageTextBox.Size = new System.Drawing.Size(611, 745);
-            this.OriginalMessageTextBox.TabIndex = 4;
+            this.originalMessageTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.originalMessageTextBox.Location = new System.Drawing.Point(3, 34);
+            this.originalMessageTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.originalMessageTextBox.Multiline = true;
+            this.originalMessageTextBox.Name = "originalMessageTextBox";
+            this.originalMessageTextBox.Size = new System.Drawing.Size(611, 745);
+            this.originalMessageTextBox.TabIndex = 4;
             // 
-            // DecodedMessageLAbel
+            // originalMessageLabel
             // 
-            this.DecodedMessageLAbel.AutoSize = true;
-            this.DecodedMessageLAbel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DecodedMessageLAbel.Location = new System.Drawing.Point(3, 0);
-            this.DecodedMessageLAbel.Name = "DecodedMessageLAbel";
-            this.DecodedMessageLAbel.Size = new System.Drawing.Size(611, 30);
-            this.DecodedMessageLAbel.TabIndex = 5;
-            this.DecodedMessageLAbel.Text = "Original message";
+            this.originalMessageLabel.AutoSize = true;
+            this.originalMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.originalMessageLabel.Location = new System.Drawing.Point(3, 0);
+            this.originalMessageLabel.Name = "originalMessageLabel";
+            this.originalMessageLabel.Size = new System.Drawing.Size(611, 30);
+            this.originalMessageLabel.TabIndex = 5;
+            this.originalMessageLabel.Text = "Original message";
             // 
-            // EncodedMessageLabel
+            // processedMessageLabel
             // 
-            this.EncodedMessageLabel.AutoSize = true;
-            this.EncodedMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EncodedMessageLabel.Location = new System.Drawing.Point(620, 0);
-            this.EncodedMessageLabel.Name = "EncodedMessageLabel";
-            this.EncodedMessageLabel.Size = new System.Drawing.Size(611, 30);
-            this.EncodedMessageLabel.TabIndex = 7;
-            this.EncodedMessageLabel.Text = "Processed message";
+            this.processedMessageLabel.AutoSize = true;
+            this.processedMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.processedMessageLabel.Location = new System.Drawing.Point(620, 0);
+            this.processedMessageLabel.Name = "processedMessageLabel";
+            this.processedMessageLabel.Size = new System.Drawing.Size(611, 30);
+            this.processedMessageLabel.TabIndex = 7;
+            this.processedMessageLabel.Text = "Processed message";
             // 
-            // EncodedMessageTextBox
+            // processedMessageTextBox
             // 
-            this.EncodedMessageTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EncodedMessageTextBox.Location = new System.Drawing.Point(620, 34);
-            this.EncodedMessageTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.EncodedMessageTextBox.Multiline = true;
-            this.EncodedMessageTextBox.Name = "EncodedMessageTextBox";
-            this.EncodedMessageTextBox.Size = new System.Drawing.Size(611, 745);
-            this.EncodedMessageTextBox.TabIndex = 6;
+            this.processedMessageTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.processedMessageTextBox.Location = new System.Drawing.Point(620, 34);
+            this.processedMessageTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.processedMessageTextBox.Multiline = true;
+            this.processedMessageTextBox.Name = "processedMessageTextBox";
+            this.processedMessageTextBox.Size = new System.Drawing.Size(611, 745);
+            this.processedMessageTextBox.TabIndex = 6;
             // 
             // doStuffButton
             // 
@@ -193,163 +193,163 @@
             this.doStuffButton.UseVisualStyleBackColor = true;
             this.doStuffButton.Click += new System.EventHandler(this.doStuffButton_Click);
             // 
-            // ErrorLabel
+            // errorLabel
             // 
-            this.ErrorLabel.AutoSize = true;
-            this.ErrorLabel.Location = new System.Drawing.Point(3, 789);
-            this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(62, 20);
-            this.ErrorLabel.TabIndex = 9;
-            this.ErrorLabel.Text = "Errors: 0";
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Location = new System.Drawing.Point(3, 789);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(62, 20);
+            this.errorLabel.TabIndex = 9;
+            this.errorLabel.Text = "Errors: 0";
             // 
-            // AuthorLabel
+            // authorLabel
             // 
-            this.AuthorLabel.AutoSize = true;
-            this.AuthorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AuthorLabel.Location = new System.Drawing.Point(0, 0);
-            this.AuthorLabel.Name = "AuthorLabel";
-            this.AuthorLabel.Size = new System.Drawing.Size(375, 20);
-            this.AuthorLabel.TabIndex = 10;
-            this.AuthorLabel.Text = "Autorzy: Mateusz Adamiec, Michał Boruta, Maciej Ejduk";
+            this.authorLabel.AutoSize = true;
+            this.authorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.authorLabel.Location = new System.Drawing.Point(0, 0);
+            this.authorLabel.Name = "authorLabel";
+            this.authorLabel.Size = new System.Drawing.Size(375, 20);
+            this.authorLabel.TabIndex = 10;
+            this.authorLabel.Text = "Autorzy: Mateusz Adamiec, Michał Boruta, Maciej Ejduk";
             // 
-            // splitContainer1
+            // panelAuthorsSplitter
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.panelAuthorsSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAuthorsSplitter.IsSplitterFixed = true;
+            this.panelAuthorsSplitter.Location = new System.Drawing.Point(0, 0);
+            this.panelAuthorsSplitter.Name = "panelAuthorsSplitter";
+            this.panelAuthorsSplitter.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // splitContainer1.Panel1
+            // panelAuthorsSplitter.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
+            this.panelAuthorsSplitter.Panel1.Controls.Add(this.messagesActionsSplitter);
             // 
-            // splitContainer1.Panel2
+            // panelAuthorsSplitter.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.AuthorLabel);
-            this.splitContainer1.Size = new System.Drawing.Size(1418, 870);
-            this.splitContainer1.SplitterDistance = 831;
-            this.splitContainer1.TabIndex = 11;
+            this.panelAuthorsSplitter.Panel2.Controls.Add(this.authorLabel);
+            this.panelAuthorsSplitter.Size = new System.Drawing.Size(1418, 870);
+            this.panelAuthorsSplitter.SplitterDistance = 831;
+            this.panelAuthorsSplitter.TabIndex = 11;
             // 
-            // splitContainer2
+            // messagesActionsSplitter
             // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
+            this.messagesActionsSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.messagesActionsSplitter.Location = new System.Drawing.Point(0, 0);
+            this.messagesActionsSplitter.Name = "messagesActionsSplitter";
             // 
-            // splitContainer2.Panel1
+            // messagesActionsSplitter.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.tableLayoutPanel2);
+            this.messagesActionsSplitter.Panel1.Controls.Add(this.messagesErrorTableLayoutPanel);
             // 
-            // splitContainer2.Panel2
+            // messagesActionsSplitter.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer2.Size = new System.Drawing.Size(1418, 831);
-            this.splitContainer2.SplitterDistance = 1240;
-            this.splitContainer2.TabIndex = 0;
+            this.messagesActionsSplitter.Panel2.Controls.Add(this.actionsTableLayoutPanel);
+            this.messagesActionsSplitter.Size = new System.Drawing.Size(1418, 831);
+            this.messagesActionsSplitter.SplitterDistance = 1240;
+            this.messagesActionsSplitter.TabIndex = 0;
             // 
-            // tableLayoutPanel2
+            // messagesErrorTableLayoutPanel
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.ErrorLabel, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1240, 831);
-            this.tableLayoutPanel2.TabIndex = 10;
+            this.messagesErrorTableLayoutPanel.ColumnCount = 1;
+            this.messagesErrorTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.messagesErrorTableLayoutPanel.Controls.Add(this.errorLabel, 0, 1);
+            this.messagesErrorTableLayoutPanel.Controls.Add(this.messagesTableLayoutPanel, 0, 0);
+            this.messagesErrorTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.messagesErrorTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.messagesErrorTableLayoutPanel.Name = "messagesErrorTableLayoutPanel";
+            this.messagesErrorTableLayoutPanel.RowCount = 2;
+            this.messagesErrorTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
+            this.messagesErrorTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.messagesErrorTableLayoutPanel.Size = new System.Drawing.Size(1240, 831);
+            this.messagesErrorTableLayoutPanel.TabIndex = 10;
             // 
-            // tableLayoutPanel3
+            // messagesTableLayoutPanel
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.EncodedMessageLabel, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.OriginalMessageTextBox, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.DecodedMessageLAbel, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.EncodedMessageTextBox, 1, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1234, 783);
-            this.tableLayoutPanel3.TabIndex = 10;
+            this.messagesTableLayoutPanel.ColumnCount = 2;
+            this.messagesTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.messagesTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.messagesTableLayoutPanel.Controls.Add(this.processedMessageLabel, 1, 0);
+            this.messagesTableLayoutPanel.Controls.Add(this.originalMessageTextBox, 0, 1);
+            this.messagesTableLayoutPanel.Controls.Add(this.originalMessageLabel, 0, 0);
+            this.messagesTableLayoutPanel.Controls.Add(this.processedMessageTextBox, 1, 1);
+            this.messagesTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.messagesTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this.messagesTableLayoutPanel.Name = "messagesTableLayoutPanel";
+            this.messagesTableLayoutPanel.RowCount = 2;
+            this.messagesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.messagesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.messagesTableLayoutPanel.Size = new System.Drawing.Size(1234, 783);
+            this.messagesTableLayoutPanel.TabIndex = 10;
             // 
-            // tableLayoutPanel1
+            // actionsTableLayoutPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.doStuffButton, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.26791F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.73209F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(174, 831);
-            this.tableLayoutPanel1.TabIndex = 9;
+            this.actionsTableLayoutPanel.ColumnCount = 1;
+            this.actionsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.actionsTableLayoutPanel.Controls.Add(this.doStuffButton, 0, 2);
+            this.actionsTableLayoutPanel.Controls.Add(this.coderGroupBox, 0, 1);
+            this.actionsTableLayoutPanel.Controls.Add(this.actionGroupBox, 0, 0);
+            this.actionsTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.actionsTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.actionsTableLayoutPanel.Name = "actionsTableLayoutPanel";
+            this.actionsTableLayoutPanel.RowCount = 3;
+            this.actionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.26791F));
+            this.actionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.73209F));
+            this.actionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.actionsTableLayoutPanel.Size = new System.Drawing.Size(174, 831);
+            this.actionsTableLayoutPanel.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1418, 870);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.panelAuthorsSplitter);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Aplikacja do korekcji pojedynczego błędu za pomocą kodowania Hamminga";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.actionGroupBox.ResumeLayout(false);
+            this.actionGroupBox.PerformLayout();
+            this.coderGroupBox.ResumeLayout(false);
+            this.coderGroupBox.PerformLayout();
+            this.panelAuthorsSplitter.Panel1.ResumeLayout(false);
+            this.panelAuthorsSplitter.Panel2.ResumeLayout(false);
+            this.panelAuthorsSplitter.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelAuthorsSplitter)).EndInit();
+            this.panelAuthorsSplitter.ResumeLayout(false);
+            this.messagesActionsSplitter.Panel1.ResumeLayout(false);
+            this.messagesActionsSplitter.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.messagesActionsSplitter)).EndInit();
+            this.messagesActionsSplitter.ResumeLayout(false);
+            this.messagesErrorTableLayoutPanel.ResumeLayout(false);
+            this.messagesErrorTableLayoutPanel.PerformLayout();
+            this.messagesTableLayoutPanel.ResumeLayout(false);
+            this.messagesTableLayoutPanel.PerformLayout();
+            this.actionsTableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private RadioButton EncodeRadioButton;
-        private RadioButton DecodeRadioButton;
-        private GroupBox groupBox1;
-        private GroupBox groupBox2;
-        private RadioButton HammingCoderRadioButton;
-        private RadioButton PolynomialCoderRadioButton;
-        private TextBox OriginalMessageTextBox;
-        private Label DecodedMessageLAbel;
-        private Label EncodedMessageLabel;
-        private TextBox EncodedMessageTextBox;
+        private RadioButton encodeRadioButton;
+        private RadioButton decodeRadioButton;
+        private GroupBox actionGroupBox;
+        private GroupBox coderGroupBox;
+        private RadioButton hammingCoderRadioButton;
+        private RadioButton polynomialCoderRadioButton;
+        private TextBox originalMessageTextBox;
+        private Label originalMessageLabel;
+        private Label processedMessageLabel;
+        private TextBox processedMessageTextBox;
         private ICoder coder;
         private bool encode;
         private Button doStuffButton;
-        private Label ErrorLabel;
-        private Label AuthorLabel;
-        private SplitContainer splitContainer1;
-        private SplitContainer splitContainer2;
-        private TableLayoutPanel tableLayoutPanel2;
-        private TableLayoutPanel tableLayoutPanel3;
-        private TableLayoutPanel tableLayoutPanel1;
+        private Label errorLabel;
+        private Label authorLabel;
+        private SplitContainer panelAuthorsSplitter;
+        private SplitContainer messagesActionsSplitter;
+        private TableLayoutPanel messagesErrorTableLayoutPanel;
+        private TableLayoutPanel messagesTableLayoutPanel;
+        private TableLayoutPanel actionsTableLayoutPanel;
     }
 }

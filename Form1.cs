@@ -31,23 +31,23 @@ namespace BinaryEncoder
 
         private void UpdateEncode()
         {
-            encode = EncodeRadioButton.Checked;
+            encode = encodeRadioButton.Checked;
         }
 
         private void UpdateCoder()
         {
-            if (HammingCoderRadioButton.Checked)
+            if (hammingCoderRadioButton.Checked)
                 coder = new HammingCoder();
-            else if (PolynomialCoderRadioButton.Checked)
+            else if (polynomialCoderRadioButton.Checked)
                 coder = new PolynomialCoder();
         }
 
         private void doStuffButton_Click(object sender, EventArgs e)
         {
-            coder.newMessage(OriginalMessageTextBox.Text);
+            coder.newMessage(originalMessageTextBox.Text);
             if (encode)
             {
-                EncodedMessageTextBox.Text = coder.EncodeMessage();
+                processedMessageTextBox.Text = coder.EncodeMessage();
             }
             else
             {
@@ -55,16 +55,16 @@ namespace BinaryEncoder
                 switch (dec.errorNo)
                 { 
                     case 0:
-                        EncodedMessageTextBox.Text = dec.message;
+                        processedMessageTextBox.Text = dec.message;
                         break;
                     case 1:
-                        EncodedMessageTextBox.Text = dec.message;
+                        processedMessageTextBox.Text = dec.message;
                         break;
                     default:
-                        EncodedMessageTextBox.Text = "Encountered too many errors, unable to proceed";
+                        processedMessageTextBox.Text = "Encountered too many errors, unable to proceed";
                         break;
                 }
-                ErrorLabel.Text = $"Errors: {dec.errorNo}";
+                errorLabel.Text = $"Errors: {dec.errorNo}" + ((dec.errorPos.Length>0)?$", Error Position: {dec.errorPos} in original message":"");
 
             }
            
