@@ -114,7 +114,11 @@ namespace BinaryEncoder
                     ParityCheck /= 2;
                 }//setting parity bits
                 string mess = ToString();
-                for(int i = 1; i < _message.Length; i*=2)
+                if (mess[0] != _message[0])
+                {
+                    overallParity = !overallParity;
+                }
+                for (int i = 1; i < _message.Length; i*=2)
                 {
                     if(mess[i]!=_message[i])
                     {

@@ -6,17 +6,12 @@ namespace BinaryEncoder
         {
             InitializeComponent();
             UpdateCoder();
-            UpdateEncode();
+            encode = true;
         }
 
-        private void EncodeRadioButton_CheckedChanged(object sender, EventArgs e)
+        private void CodingRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            UpdateEncode();
-        }
-
-        private void DecodeRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateEncode();
+            encode = encodeRadioButton.Checked;
         }
 
         private void HammingCoderRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -27,11 +22,6 @@ namespace BinaryEncoder
         private void PolynomialCoderRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             UpdateCoder();
-        }
-
-        private void UpdateEncode()
-        {
-            encode = encodeRadioButton.Checked;
         }
 
         private void UpdateCoder()
@@ -52,17 +42,13 @@ namespace BinaryEncoder
             else
             {
                 var dec = coder.DecodeMessage();
-                switch (dec.errorNo)
-                { 
-                    case 0:
-                        processedMessageTextBox.Text = dec.message;
-                        break;
-                    case 1:
-                        processedMessageTextBox.Text = dec.message;
-                        break;
-                    default:
-                        processedMessageTextBox.Text = "Encountered too many errors, unable to proceed";
-                        break;
+                if(dec.errorNo > 1)
+                {
+                    processedMessageTextBox.Text = "Encountered too many errors, unable to proceed";
+                }
+                else
+                {
+                    processedMessageTextBox.Text = dec.message;
                 }
                 errorLabel.Text = $"Errors: {dec.errorNo}" + ((dec.errorPos.Length>0)?$", Error Position: {dec.errorPos} in original message":"");
 

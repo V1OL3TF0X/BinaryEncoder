@@ -73,7 +73,7 @@
             this.encodeRadioButton.TabStop = true;
             this.encodeRadioButton.Text = "Encode";
             this.encodeRadioButton.UseVisualStyleBackColor = true;
-            this.encodeRadioButton.CheckedChanged += new System.EventHandler(this.EncodeRadioButton_CheckedChanged);
+            this.encodeRadioButton.CheckedChanged += new System.EventHandler(this.CodingRadioButton_CheckedChanged);
             // 
             // decodeRadioButton
             // 
@@ -85,7 +85,7 @@
             this.decodeRadioButton.TabIndex = 1;
             this.decodeRadioButton.Text = "Decode";
             this.decodeRadioButton.UseVisualStyleBackColor = true;
-            this.decodeRadioButton.CheckedChanged += new System.EventHandler(this.DecodeRadioButton_CheckedChanged);
+            this.decodeRadioButton.CheckedChanged += new System.EventHandler(this.CodingRadioButton_CheckedChanged);
             // 
             // actionGroupBox
             // 
