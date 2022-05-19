@@ -88,7 +88,6 @@ namespace BinaryEncoder
             {
                 _msg = new bool[_message.Length];
                 _number_of_bytes = _message.Length;
-
                 for (int i = 0; i < _msg.Length; i++)
                     _msg[i] = _message[i] == '1';
                 int error_position = 0, number_of_errors = 0;
@@ -129,7 +128,7 @@ namespace BinaryEncoder
                 if (error_position != 0) //we encountered an error
                 {
                     if (!overallParity) //overall parity is even - at least two errors
-                        return ("", 2, "");
+                        return ("Encountered too many errors, unable to proceed", 2, "");
                     _msg[error_position] ^= true; //error_position points at the bit that d=needs to be flipped
                     number_of_errors++;
 

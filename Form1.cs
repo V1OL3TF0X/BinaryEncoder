@@ -6,12 +6,22 @@ namespace BinaryEncoder
         {
             InitializeComponent();
             UpdateCoder();
-            encode = true;
+            actionUser = new();
         }
 
         private void CodingRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            encode = encodeRadioButton.Checked;
+            actionUser.ChangeAction(Action.decode);
+        }
+
+        private void EncodeRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            actionUser.ChangeAction(Action.encode);
+        }
+
+        private void disruptAndDecodeRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            actionUser.ChangeAction(Action.disrupt_and_decode);
         }
 
         private void HammingCoderRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -32,28 +42,12 @@ namespace BinaryEncoder
                 coder = new PolynomialCoder();
         }
 
-        private void doStuffButton_Click(object sender, EventArgs e)
+        private void DoStuffButton_Click(object sender, EventArgs e)
         {
             coder.newMessage(originalMessageTextBox.Text);
-            if (encode)
-            {
-                processedMessageTextBox.Text = coder.EncodeMessage();
-            }
-            else
-            {
-                var dec = coder.DecodeMessage();
-                if(dec.errorNo > 1)
-                {
-                    processedMessageTextBox.Text = "Encountered too many errors, unable to proceed";
-                }
-                else
-                {
-                    processedMessageTextBox.Text = dec.message;
-                }
-                errorLabel.Text = $"Errors: {dec.errorNo}" + ((dec.errorPos.Length>0)?$", Error Position: {dec.errorPos} in original message":"");
-
-            }
-           
+            var x = actionUser.TakeAction(coder);
+            processedMessageTextBox.Text = x.message;
+            errorLabel.Text = $"Errors: {x.errors}" + ((x.errors == 0) ? $", error corected at possition {x.position} in original message" : "");
         }
     }
 }

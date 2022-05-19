@@ -31,6 +31,7 @@
             this.encodeRadioButton = new System.Windows.Forms.RadioButton();
             this.decodeRadioButton = new System.Windows.Forms.RadioButton();
             this.actionGroupBox = new System.Windows.Forms.GroupBox();
+            this.disruptAndDecodeRadioButton = new System.Windows.Forms.RadioButton();
             this.coderGroupBox = new System.Windows.Forms.GroupBox();
             this.hammingCoderRadioButton = new System.Windows.Forms.RadioButton();
             this.polynomialCoderRadioButton = new System.Windows.Forms.RadioButton();
@@ -73,7 +74,7 @@
             this.encodeRadioButton.TabStop = true;
             this.encodeRadioButton.Text = "Encode";
             this.encodeRadioButton.UseVisualStyleBackColor = true;
-            this.encodeRadioButton.CheckedChanged += new System.EventHandler(this.CodingRadioButton_CheckedChanged);
+            this.encodeRadioButton.CheckedChanged += new System.EventHandler(this.EncodeRadioButton_CheckedChanged);
             // 
             // decodeRadioButton
             // 
@@ -89,6 +90,7 @@
             // 
             // actionGroupBox
             // 
+            this.actionGroupBox.Controls.Add(this.disruptAndDecodeRadioButton);
             this.actionGroupBox.Controls.Add(this.encodeRadioButton);
             this.actionGroupBox.Controls.Add(this.decodeRadioButton);
             this.actionGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -100,6 +102,18 @@
             this.actionGroupBox.TabIndex = 2;
             this.actionGroupBox.TabStop = false;
             this.actionGroupBox.Text = "Action";
+            // 
+            // disruptAndDecodeRadioButton
+            // 
+            this.disruptAndDecodeRadioButton.AutoSize = true;
+            this.disruptAndDecodeRadioButton.Location = new System.Drawing.Point(8, 94);
+            this.disruptAndDecodeRadioButton.Name = "disruptAndDecodeRadioButton";
+            this.disruptAndDecodeRadioButton.Size = new System.Drawing.Size(163, 24);
+            this.disruptAndDecodeRadioButton.TabIndex = 2;
+            this.disruptAndDecodeRadioButton.TabStop = true;
+            this.disruptAndDecodeRadioButton.Text = "Disrupt and Decode";
+            this.disruptAndDecodeRadioButton.UseVisualStyleBackColor = true;
+            this.disruptAndDecodeRadioButton.CheckedChanged += new System.EventHandler(this.disruptAndDecodeRadioButton_CheckedChanged);
             // 
             // coderGroupBox
             // 
@@ -191,7 +205,7 @@
             this.doStuffButton.TabIndex = 8;
             this.doStuffButton.Text = "WORK";
             this.doStuffButton.UseVisualStyleBackColor = true;
-            this.doStuffButton.Click += new System.EventHandler(this.doStuffButton_Click);
+            this.doStuffButton.Click += new System.EventHandler(this.DoStuffButton_Click);
             // 
             // errorLabel
             // 
@@ -342,7 +356,7 @@
         private Label processedMessageLabel;
         private TextBox processedMessageTextBox;
         private ICoder coder;
-        private bool encode;
+        private ActionUser actionUser;
         private Button doStuffButton;
         private Label errorLabel;
         private Label authorLabel;
@@ -351,5 +365,6 @@
         private TableLayoutPanel messagesErrorTableLayoutPanel;
         private TableLayoutPanel messagesTableLayoutPanel;
         private TableLayoutPanel actionsTableLayoutPanel;
+        private RadioButton disruptAndDecodeRadioButton;
     }
 }
