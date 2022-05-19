@@ -158,7 +158,7 @@ namespace BinaryEncoder
                 for (int i = n; i >= 1; i--)
                 {
                     // If i is a power of 2
-                    if ((i & (i - 1)) == 0)
+                    if (IsPowerOf2(i))
                     {
                         res = i;
                         break;

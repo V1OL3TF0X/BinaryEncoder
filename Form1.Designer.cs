@@ -38,7 +38,6 @@
             this.originalMessageTextBox = new System.Windows.Forms.TextBox();
             this.originalMessageLabel = new System.Windows.Forms.Label();
             this.processedMessageLabel = new System.Windows.Forms.Label();
-            this.processedMessageTextBox = new System.Windows.Forms.TextBox();
             this.doStuffButton = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
             this.authorLabel = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.messagesActionsSplitter = new System.Windows.Forms.SplitContainer();
             this.messagesErrorTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.messagesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.processedMessageTextBox = new System.Windows.Forms.RichTextBox();
             this.actionsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.actionGroupBox.SuspendLayout();
             this.coderGroupBox.SuspendLayout();
@@ -66,10 +66,9 @@
             // 
             this.encodeRadioButton.AutoSize = true;
             this.encodeRadioButton.Checked = true;
-            this.encodeRadioButton.Location = new System.Drawing.Point(7, 29);
-            this.encodeRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.encodeRadioButton.Location = new System.Drawing.Point(6, 22);
             this.encodeRadioButton.Name = "encodeRadioButton";
-            this.encodeRadioButton.Size = new System.Drawing.Size(79, 24);
+            this.encodeRadioButton.Size = new System.Drawing.Size(64, 19);
             this.encodeRadioButton.TabIndex = 0;
             this.encodeRadioButton.TabStop = true;
             this.encodeRadioButton.Text = "Encode";
@@ -79,10 +78,9 @@
             // decodeRadioButton
             // 
             this.decodeRadioButton.AutoSize = true;
-            this.decodeRadioButton.Location = new System.Drawing.Point(7, 63);
-            this.decodeRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.decodeRadioButton.Location = new System.Drawing.Point(6, 47);
             this.decodeRadioButton.Name = "decodeRadioButton";
-            this.decodeRadioButton.Size = new System.Drawing.Size(82, 24);
+            this.decodeRadioButton.Size = new System.Drawing.Size(65, 19);
             this.decodeRadioButton.TabIndex = 1;
             this.decodeRadioButton.Text = "Decode";
             this.decodeRadioButton.UseVisualStyleBackColor = true;
@@ -94,11 +92,9 @@
             this.actionGroupBox.Controls.Add(this.encodeRadioButton);
             this.actionGroupBox.Controls.Add(this.decodeRadioButton);
             this.actionGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.actionGroupBox.Location = new System.Drawing.Point(3, 4);
-            this.actionGroupBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.actionGroupBox.Location = new System.Drawing.Point(3, 3);
             this.actionGroupBox.Name = "actionGroupBox";
-            this.actionGroupBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.actionGroupBox.Size = new System.Drawing.Size(168, 268);
+            this.actionGroupBox.Size = new System.Drawing.Size(146, 200);
             this.actionGroupBox.TabIndex = 2;
             this.actionGroupBox.TabStop = false;
             this.actionGroupBox.Text = "Action";
@@ -106,9 +102,10 @@
             // disruptAndDecodeRadioButton
             // 
             this.disruptAndDecodeRadioButton.AutoSize = true;
-            this.disruptAndDecodeRadioButton.Location = new System.Drawing.Point(8, 94);
+            this.disruptAndDecodeRadioButton.Location = new System.Drawing.Point(7, 70);
+            this.disruptAndDecodeRadioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.disruptAndDecodeRadioButton.Name = "disruptAndDecodeRadioButton";
-            this.disruptAndDecodeRadioButton.Size = new System.Drawing.Size(163, 24);
+            this.disruptAndDecodeRadioButton.Size = new System.Drawing.Size(129, 19);
             this.disruptAndDecodeRadioButton.TabIndex = 2;
             this.disruptAndDecodeRadioButton.TabStop = true;
             this.disruptAndDecodeRadioButton.Text = "Disrupt and Decode";
@@ -120,11 +117,9 @@
             this.coderGroupBox.Controls.Add(this.hammingCoderRadioButton);
             this.coderGroupBox.Controls.Add(this.polynomialCoderRadioButton);
             this.coderGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coderGroupBox.Location = new System.Drawing.Point(3, 280);
-            this.coderGroupBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.coderGroupBox.Location = new System.Drawing.Point(3, 209);
             this.coderGroupBox.Name = "coderGroupBox";
-            this.coderGroupBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.coderGroupBox.Size = new System.Drawing.Size(168, 457);
+            this.coderGroupBox.Size = new System.Drawing.Size(146, 342);
             this.coderGroupBox.TabIndex = 3;
             this.coderGroupBox.TabStop = false;
             this.coderGroupBox.Text = "Coder";
@@ -133,10 +128,9 @@
             // 
             this.hammingCoderRadioButton.AutoSize = true;
             this.hammingCoderRadioButton.Checked = true;
-            this.hammingCoderRadioButton.Location = new System.Drawing.Point(8, 28);
-            this.hammingCoderRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hammingCoderRadioButton.Location = new System.Drawing.Point(7, 21);
             this.hammingCoderRadioButton.Name = "hammingCoderRadioButton";
-            this.hammingCoderRadioButton.Size = new System.Drawing.Size(96, 24);
+            this.hammingCoderRadioButton.Size = new System.Drawing.Size(79, 19);
             this.hammingCoderRadioButton.TabIndex = 2;
             this.hammingCoderRadioButton.TabStop = true;
             this.hammingCoderRadioButton.Text = "Hamming";
@@ -146,10 +140,9 @@
             // polynomialCoderRadioButton
             // 
             this.polynomialCoderRadioButton.AutoSize = true;
-            this.polynomialCoderRadioButton.Location = new System.Drawing.Point(8, 61);
-            this.polynomialCoderRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.polynomialCoderRadioButton.Location = new System.Drawing.Point(7, 46);
             this.polynomialCoderRadioButton.Name = "polynomialCoderRadioButton";
-            this.polynomialCoderRadioButton.Size = new System.Drawing.Size(103, 24);
+            this.polynomialCoderRadioButton.Size = new System.Drawing.Size(85, 19);
             this.polynomialCoderRadioButton.TabIndex = 3;
             this.polynomialCoderRadioButton.Text = "Polynomial";
             this.polynomialCoderRadioButton.UseVisualStyleBackColor = true;
@@ -158,11 +151,10 @@
             // originalMessageTextBox
             // 
             this.originalMessageTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.originalMessageTextBox.Location = new System.Drawing.Point(3, 34);
-            this.originalMessageTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.originalMessageTextBox.Location = new System.Drawing.Point(3, 25);
             this.originalMessageTextBox.Multiline = true;
             this.originalMessageTextBox.Name = "originalMessageTextBox";
-            this.originalMessageTextBox.Size = new System.Drawing.Size(611, 745);
+            this.originalMessageTextBox.Size = new System.Drawing.Size(533, 560);
             this.originalMessageTextBox.TabIndex = 4;
             // 
             // originalMessageLabel
@@ -171,7 +163,7 @@
             this.originalMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.originalMessageLabel.Location = new System.Drawing.Point(3, 0);
             this.originalMessageLabel.Name = "originalMessageLabel";
-            this.originalMessageLabel.Size = new System.Drawing.Size(611, 30);
+            this.originalMessageLabel.Size = new System.Drawing.Size(533, 22);
             this.originalMessageLabel.TabIndex = 5;
             this.originalMessageLabel.Text = "Original message";
             // 
@@ -179,29 +171,18 @@
             // 
             this.processedMessageLabel.AutoSize = true;
             this.processedMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.processedMessageLabel.Location = new System.Drawing.Point(620, 0);
+            this.processedMessageLabel.Location = new System.Drawing.Point(542, 0);
             this.processedMessageLabel.Name = "processedMessageLabel";
-            this.processedMessageLabel.Size = new System.Drawing.Size(611, 30);
+            this.processedMessageLabel.Size = new System.Drawing.Size(534, 22);
             this.processedMessageLabel.TabIndex = 7;
             this.processedMessageLabel.Text = "Processed message";
-            // 
-            // processedMessageTextBox
-            // 
-            this.processedMessageTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.processedMessageTextBox.Location = new System.Drawing.Point(620, 34);
-            this.processedMessageTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.processedMessageTextBox.Multiline = true;
-            this.processedMessageTextBox.Name = "processedMessageTextBox";
-            this.processedMessageTextBox.Size = new System.Drawing.Size(611, 745);
-            this.processedMessageTextBox.TabIndex = 6;
             // 
             // doStuffButton
             // 
             this.doStuffButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.doStuffButton.Location = new System.Drawing.Point(3, 745);
-            this.doStuffButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.doStuffButton.Location = new System.Drawing.Point(3, 557);
             this.doStuffButton.Name = "doStuffButton";
-            this.doStuffButton.Size = new System.Drawing.Size(168, 82);
+            this.doStuffButton.Size = new System.Drawing.Size(146, 62);
             this.doStuffButton.TabIndex = 8;
             this.doStuffButton.Text = "WORK";
             this.doStuffButton.UseVisualStyleBackColor = true;
@@ -210,9 +191,9 @@
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(3, 789);
+            this.errorLabel.Location = new System.Drawing.Point(3, 590);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(62, 20);
+            this.errorLabel.Size = new System.Drawing.Size(49, 15);
             this.errorLabel.TabIndex = 9;
             this.errorLabel.Text = "Errors: 0";
             // 
@@ -222,7 +203,7 @@
             this.authorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.authorLabel.Location = new System.Drawing.Point(0, 0);
             this.authorLabel.Name = "authorLabel";
-            this.authorLabel.Size = new System.Drawing.Size(375, 20);
+            this.authorLabel.Size = new System.Drawing.Size(301, 15);
             this.authorLabel.TabIndex = 10;
             this.authorLabel.Text = "Autorzy: Mateusz Adamiec, Michał Boruta, Maciej Ejduk";
             // 
@@ -231,6 +212,7 @@
             this.panelAuthorsSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAuthorsSplitter.IsSplitterFixed = true;
             this.panelAuthorsSplitter.Location = new System.Drawing.Point(0, 0);
+            this.panelAuthorsSplitter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelAuthorsSplitter.Name = "panelAuthorsSplitter";
             this.panelAuthorsSplitter.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -241,14 +223,16 @@
             // panelAuthorsSplitter.Panel2
             // 
             this.panelAuthorsSplitter.Panel2.Controls.Add(this.authorLabel);
-            this.panelAuthorsSplitter.Size = new System.Drawing.Size(1418, 870);
-            this.panelAuthorsSplitter.SplitterDistance = 831;
+            this.panelAuthorsSplitter.Size = new System.Drawing.Size(1241, 652);
+            this.panelAuthorsSplitter.SplitterDistance = 622;
+            this.panelAuthorsSplitter.SplitterWidth = 3;
             this.panelAuthorsSplitter.TabIndex = 11;
             // 
             // messagesActionsSplitter
             // 
             this.messagesActionsSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.messagesActionsSplitter.Location = new System.Drawing.Point(0, 0);
+            this.messagesActionsSplitter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.messagesActionsSplitter.Name = "messagesActionsSplitter";
             // 
             // messagesActionsSplitter.Panel1
@@ -258,8 +242,8 @@
             // messagesActionsSplitter.Panel2
             // 
             this.messagesActionsSplitter.Panel2.Controls.Add(this.actionsTableLayoutPanel);
-            this.messagesActionsSplitter.Size = new System.Drawing.Size(1418, 831);
-            this.messagesActionsSplitter.SplitterDistance = 1240;
+            this.messagesActionsSplitter.Size = new System.Drawing.Size(1241, 622);
+            this.messagesActionsSplitter.SplitterDistance = 1085;
             this.messagesActionsSplitter.TabIndex = 0;
             // 
             // messagesErrorTableLayoutPanel
@@ -270,11 +254,12 @@
             this.messagesErrorTableLayoutPanel.Controls.Add(this.messagesTableLayoutPanel, 0, 0);
             this.messagesErrorTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.messagesErrorTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.messagesErrorTableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.messagesErrorTableLayoutPanel.Name = "messagesErrorTableLayoutPanel";
             this.messagesErrorTableLayoutPanel.RowCount = 2;
             this.messagesErrorTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
             this.messagesErrorTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.messagesErrorTableLayoutPanel.Size = new System.Drawing.Size(1240, 831);
+            this.messagesErrorTableLayoutPanel.Size = new System.Drawing.Size(1085, 622);
             this.messagesErrorTableLayoutPanel.TabIndex = 10;
             // 
             // messagesTableLayoutPanel
@@ -287,13 +272,26 @@
             this.messagesTableLayoutPanel.Controls.Add(this.originalMessageLabel, 0, 0);
             this.messagesTableLayoutPanel.Controls.Add(this.processedMessageTextBox, 1, 1);
             this.messagesTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.messagesTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this.messagesTableLayoutPanel.Location = new System.Drawing.Point(3, 2);
+            this.messagesTableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.messagesTableLayoutPanel.Name = "messagesTableLayoutPanel";
             this.messagesTableLayoutPanel.RowCount = 2;
-            this.messagesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.messagesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.messagesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.messagesTableLayoutPanel.Size = new System.Drawing.Size(1234, 783);
+            this.messagesTableLayoutPanel.Size = new System.Drawing.Size(1079, 586);
             this.messagesTableLayoutPanel.TabIndex = 10;
+            // 
+            // processedMessageTextBox
+            // 
+            this.processedMessageTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.processedMessageTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.processedMessageTextBox.Location = new System.Drawing.Point(542, 25);
+            this.processedMessageTextBox.Name = "processedMessageTextBox";
+            this.processedMessageTextBox.ReadOnly = true;
+            this.processedMessageTextBox.Size = new System.Drawing.Size(534, 560);
+            this.processedMessageTextBox.TabIndex = 8;
+            this.processedMessageTextBox.Text = "";
+            this.processedMessageTextBox.TextChanged += new System.EventHandler(this.processedMessageTextBox_TextChanged);
             // 
             // actionsTableLayoutPanel
             // 
@@ -304,21 +302,21 @@
             this.actionsTableLayoutPanel.Controls.Add(this.actionGroupBox, 0, 0);
             this.actionsTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.actionsTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.actionsTableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.actionsTableLayoutPanel.Name = "actionsTableLayoutPanel";
             this.actionsTableLayoutPanel.RowCount = 3;
             this.actionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.26791F));
             this.actionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.73209F));
-            this.actionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.actionsTableLayoutPanel.Size = new System.Drawing.Size(174, 831);
+            this.actionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.actionsTableLayoutPanel.Size = new System.Drawing.Size(152, 622);
             this.actionsTableLayoutPanel.TabIndex = 9;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1418, 870);
+            this.ClientSize = new System.Drawing.Size(1241, 652);
             this.Controls.Add(this.panelAuthorsSplitter);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Aplikacja do korekcji pojedynczego błędu za pomocą kodowania Hamminga";
             this.actionGroupBox.ResumeLayout(false);
@@ -354,7 +352,6 @@
         private TextBox originalMessageTextBox;
         private Label originalMessageLabel;
         private Label processedMessageLabel;
-        private TextBox processedMessageTextBox;
         private ICoder coder;
         private ActionUser actionUser;
         private Button doStuffButton;
@@ -366,5 +363,6 @@
         private TableLayoutPanel messagesTableLayoutPanel;
         private TableLayoutPanel actionsTableLayoutPanel;
         private RadioButton disruptAndDecodeRadioButton;
+        private RichTextBox processedMessageTextBox;
     }
 }

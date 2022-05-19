@@ -11,17 +11,20 @@ namespace BinaryEncoder
 
         private void CodingRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            actionUser.ChangeAction(Action.decode);
+            if(decodeRadioButton.Checked)
+                actionUser.ChangeAction(Action.decode);
         }
 
         private void EncodeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            actionUser.ChangeAction(Action.encode);
+            if (encodeRadioButton.Checked)
+                actionUser.ChangeAction(Action.encode);
         }
 
         private void disruptAndDecodeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            actionUser.ChangeAction(Action.disrupt_and_decode);
+            if (disruptAndDecodeRadioButton.Checked)
+                actionUser.ChangeAction(Action.disrupt_and_decode);
         }
 
         private void HammingCoderRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -48,6 +51,24 @@ namespace BinaryEncoder
             var x = actionUser.TakeAction(coder);
             processedMessageTextBox.Text = x.message;
             errorLabel.Text = $"Errors: {x.errors}" + ((x.errors == 0) ? $", error corected at possition {x.position} in original message" : "");
+            processedMessageLabel.Text = "Processed message" + (encodeRadioButton.Checked? " (parity bits highlighted in red)" : "");
+        }
+
+        private void processedMessageTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if(encodeRadioButton.Checked)
+            {
+                string msg = processedMessageTextBox.Text;
+                processedMessageTextBox.Text = "";
+                for (int i = 0; i < msg.Length; i++)
+                {
+                    if ((i & (i - 1)) == 0)
+                        RichTextBoxExtensions.AppendText(processedMessageTextBox, msg[i].ToString(), Color.Red);
+                    else
+                        RichTextBoxExtensions.AppendText(processedMessageTextBox, msg[i].ToString(), Color.Black);
+                }
+            }
+            
         }
     }
 }
