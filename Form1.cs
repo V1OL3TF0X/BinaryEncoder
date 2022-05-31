@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace BinaryEncoder
 {
     public partial class Form1 : Form
@@ -50,7 +52,7 @@ namespace BinaryEncoder
             coder.newMessage(originalMessageTextBox.Text);
             var x = actionUser.TakeAction(coder);
             processedMessageTextBox.Text = x.message;
-            errorLabel.Text = $"Errors: {x.errors}" + ((x.errors == 0) ? $", error corected at possition {x.position} in original message" : "");
+            errorLabel.Text = $"Errors: {x.errors}" + ((x.errors == 0) ? "" : $", error corected at possition {x.position} in original message");
             processedMessageLabel.Text = "Processed message" + (encodeRadioButton.Checked? " (parity bits highlighted in red)" : "");
         }
 
@@ -58,17 +60,39 @@ namespace BinaryEncoder
         {
             if(encodeRadioButton.Checked)
             {
-                string msg = processedMessageTextBox.Text;
-                processedMessageTextBox.Text = "";
-                for (int i = 0; i < msg.Length; i++)
+                if(coder is HammingCoder)
                 {
-                    if ((i & (i - 1)) == 0)
-                        RichTextBoxExtensions.AppendText(processedMessageTextBox, msg[i].ToString(), Color.Red);
-                    else
-                        RichTextBoxExtensions.AppendText(processedMessageTextBox, msg[i].ToString(), Color.Black);
+                    string msg = processedMessageTextBox.Text;
+                    processedMessageTextBox.Text = "";
+                    for (int i = 0; i < msg.Length; i++)
+                    {
+                        if ((i & (i - 1)) == 0)
+                            RichTextBoxExtensions.AppendText(processedMessageTextBox, msg[i].ToString(), Color.Red);
+                        else
+                            RichTextBoxExtensions.AppendText(processedMessageTextBox, msg[i].ToString(), Color.Black);
+                    }
                 }
+                else if(coder is PolynomialCoder coder1)
+                {
+                    string msg = processedMessageTextBox.Text;
+                    processedMessageTextBox.Text = "";
+                    var msgLen = msg.Length - coder1.polyLen + 1;
+                    RichTextBoxExtensions.AppendText(processedMessageTextBox, msg[..msgLen], Color.Black);
+                    RichTextBoxExtensions.AppendText(processedMessageTextBox, msg[msgLen..], Color.Red);
+
+                }
+                
             }
             
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            AllocConsole();
+        }
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
     }
 }

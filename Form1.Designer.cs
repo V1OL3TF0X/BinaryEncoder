@@ -319,6 +319,7 @@
             this.Controls.Add(this.panelAuthorsSplitter);
             this.Name = "Form1";
             this.Text = "Aplikacja do korekcji pojedynczego błędu za pomocą kodowania Hamminga";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.actionGroupBox.ResumeLayout(false);
             this.actionGroupBox.PerformLayout();
             this.coderGroupBox.ResumeLayout(false);
@@ -352,7 +353,7 @@
         private TextBox originalMessageTextBox;
         private Label originalMessageLabel;
         private Label processedMessageLabel;
-        private ICoder coder;
+        private Coder coder;
         private ActionUser actionUser;
         private Button doStuffButton;
         private Label errorLabel;

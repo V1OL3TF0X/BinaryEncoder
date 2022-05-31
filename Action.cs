@@ -25,7 +25,7 @@ namespace BinaryEncoder
         {
             this._action = action;
         }
-        public (string message, int errors, string? position) TakeAction(ICoder coder)
+        public (string message, int errors, string? position) TakeAction(Coder coder)
         {
             switch(_action)
             {

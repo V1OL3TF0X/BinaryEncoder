@@ -6,42 +6,19 @@ using System.Threading.Tasks;
 
 namespace BinaryEncoder
 {
-        public class HammingCoder : ICoder
+        public class HammingCoder : Coder
         {
-            private string _message;
-            private bool[] _msg;
-            private int _number_of_bytes;
             bool ExtendedHamming { get; set; }
             public static implicit operator HammingCoder(string v)
             {
                 return new HammingCoder(v);
             }
-            public HammingCoder(string message = "", bool ExtendedHC = true)
+            public HammingCoder(string message = "", bool ExtendedHC = true) : base(message)
             {
-                _message = "";
-                _msg = new bool[1];
-                newMessage(message);
                 ExtendedHamming = ExtendedHC;
             }
-            public void newMessage(string message)
-            {
-                 _message = message;
-            }
-            public bool DisruptMessage(int disrupt)
-            {
-                if (disrupt > -2)
-                {
-                    if (disrupt == -1)
-                    {
-                        Random r = new();
-                        disrupt = r.Next(0, _msg.Length - 1);
-                    }
-                    else if (disrupt >= _msg.Length) disrupt = _msg.Length - 1;
-                    _msg[disrupt] ^= true;
-                } //gets a random/specified bit in the coded data and flips it 
-                return true;
-            }
-            public string EncodeMessage()
+            
+            public override string EncodeMessage()
             {
                 _number_of_bytes = 2;
                 int encodedBytes = 1;
@@ -84,7 +61,7 @@ namespace BinaryEncoder
                 }//setting parity bits
                 return ToString();
             }
-            public (string message, int errorNo, string errorPos) DecodeMessage()
+            public override (string message, int errorNo, string errorPos) DecodeMessage()
             {
                 _msg = new bool[_message.Length];
                 _number_of_bytes = _message.Length;
