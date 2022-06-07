@@ -50,20 +50,28 @@ namespace BinaryEncoder
         private void DoStuffButton_Click(object sender, EventArgs e)
         {
             coder.newMessage(originalMessageTextBox.Text);
-            var x = actionUser.TakeAction(coder);
-            processedMessageTextBox.Text = x.message;
-            errorLabel.Text = $"Errors: {x.errors}" + ((x.errors == 0) ? "" : $", error corected at possition {x.position} in original message");
+            var (message, errors, position) = actionUser.TakeAction(coder);
+            processedMessageTextBox.Text = message;
+            if (decodeRadioButton.Checked && errors == 1)
+            {
+                var error_bit = int.Parse(position) - (int)Math.Floor(Math.Log(int.Parse(position),2)) - 2;
+                processedMessageTextBox.Text = "";
+                RichTextBoxExtensions.AppendText(processedMessageTextBox, message[..error_bit], Color.Black);
+                RichTextBoxExtensions.AppendText(processedMessageTextBox, message[error_bit].ToString(), Color.Red);
+                RichTextBoxExtensions.AppendText(processedMessageTextBox, message[(error_bit+1)..], Color.Black);
+            }
+            errorLabel.Text = $"Errors: {errors}" + ((errors == 1) ? "" : $", error corected at possition {position} in original message");
             processedMessageLabel.Text = "Processed message" + (encodeRadioButton.Checked? " (parity bits highlighted in red)" : "");
         }
 
         private void processedMessageTextBox_TextChanged(object sender, EventArgs e)
         {
-            if(encodeRadioButton.Checked)
+            if (encodeRadioButton.Checked)
             {
-                if(coder is HammingCoder)
+                string msg = processedMessageTextBox.Text;
+                processedMessageTextBox.Text = "";
+                if (coder is HammingCoder)
                 {
-                    string msg = processedMessageTextBox.Text;
-                    processedMessageTextBox.Text = "";
                     for (int i = 0; i < msg.Length; i++)
                     {
                         if ((i & (i - 1)) == 0)
@@ -74,8 +82,6 @@ namespace BinaryEncoder
                 }
                 else if(coder is PolynomialCoder coder1)
                 {
-                    string msg = processedMessageTextBox.Text;
-                    processedMessageTextBox.Text = "";
                     var msgLen = msg.Length - coder1.polyLen + 1;
                     RichTextBoxExtensions.AppendText(processedMessageTextBox, msg[..msgLen], Color.Black);
                     RichTextBoxExtensions.AppendText(processedMessageTextBox, msg[msgLen..], Color.Red);
